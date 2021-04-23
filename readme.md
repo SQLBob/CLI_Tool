@@ -37,9 +37,32 @@ Roberts-MBP:src robertglass$ git config --global core.editor "code --wait"
         - git remote add origin https://github.com/<username>/CLI_Tool.git
         - git push -u origin main
 
+    Task: Configure "poetry run" for executing python scripts
+        - Also finish configuration of poetry 
+            - https://python-poetry.org/docs/
+                - Enable tab completions
+                    - poetry completions bash > $(brew --prefix)/etc/bash_completion.d/poetry.bash-completion
+                    - but then switched to zsh so had to run this instead
+                        - poetry completions zsh > ~/.zfunc/_poetry
+        - Resource: https://python-poetry.org/docs/pyproject/#scripts
+            - added this to ~/src/CLI_Tool/pyproject.toml
+                    [tool.poetry.scripts]
+                    poetry = 'poetry.console:run'
+        - Found that adding execute permission to my .py script was needed.
+            - chmod +x ./klickbrick.py
+
+    Task: Write this program, poetry run klickbrick hello
+        - should print “Hello World".
+    Task: modify program to take parameters, poetry run klickbrick hello --name Ole
+        - should print “Hello Ole”.
+            Tip: Think of “Klickbrick” as the program, “hello” as the command, and “–name” as a flag which takes the argument “Ole.” 
+
+
 RESOURCES:
     - Python Setup and Usage
         - https://docs.python.org/3/using/index.html
+    - Poetry for dependecy management and packaging
+        - https://python-poetry.org/docs/
     - Distributing Python Applications on the Mac
         - https://docs.python.org/3/using/mac.html
     - Chapter 11: Python Programs (using argparse)
@@ -47,4 +70,12 @@ RESOURCES:
 
 TODO:
     - git add LICENSE
-    - find GUI tools
+    - investigate need for she-bang need, #!/usr/bin/env python
+    -
+  
+
+Cards:
+Linting
+poetry
+bash
+zsh
