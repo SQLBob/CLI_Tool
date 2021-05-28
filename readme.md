@@ -57,7 +57,8 @@ Roberts-MBP:src robertglass$ git config --global core.editor "code --wait"
         - should print “Hello Ole”.
             Tip: Think of “Klickbrick” as the program, “hello” as the command, and “–name” as a flag which takes the argument “Ole.” 
 
-
+    Task: write a unit test
+        - Resource: https://docs.python.org/3/library/unittest.html#basic-example
 RESOURCES:
     - Python Setup and Usage
         - https://docs.python.org/3/using/index.html
